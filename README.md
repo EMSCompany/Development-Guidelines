@@ -2,8 +2,8 @@
 Welcome — this is the entry point for new developers joining the EMS projects. These documents define our standard practices for collaboration, git usage, PRs, and releases.
 
 ## Quick start
-- Read the Git Usage guidelines: [Git Usage](./git-usage.md)
-- Read the Git Flow & PR System: [Git Flow & PR System](./git-flow-pr.md)
+- Read the Git Usage guidelines: [Git Usage](general/git/git-usage.md)
+- Read the Git Flow & PR System: [Git Flow & PR System](general/git/git-flow-pr.md)
 
 ## Other Files
 
