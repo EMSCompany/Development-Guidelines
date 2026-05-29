@@ -23,22 +23,24 @@ Start with [`conventions.md`](./conventions.md). It defines the MUST / SHOULD / 
 
 Then read by area:
 
-| Area                   | File                                                         | Covers                                                                  |
-| ---------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------- |
-| Architecture (Stack A) | [`architecture/nextjs.md`](./architecture/nextjs.md)         | Folder layout, server/client split, Server Actions, caching, boundaries |
-| Architecture (Stack B) | [`architecture/vite-react.md`](./architecture/vite-react.md) | Folder layout, TanStack Router, loaders, code splitting, env vars       |
-| TypeScript             | [`code/typescript.md`](./code/typescript.md)                 | tsconfig flags, type vs interface, `any`/`unknown`, assertions          |
-| Components             | [`code/components.md`](./code/components.md)                 | Categories, props, conditional rendering, memoization, states           |
-| Styling                | [`code/styling.md`](./code/styling.md)                       | Tailwind, registry-first, `cva`, theme tokens, dark mode                |
-| Naming                 | [`code/naming.md`](./code/naming.md)                         | Files, components, hooks, booleans, handlers, types                     |
-| State and data         | [`code/state-and-data.md`](./code/state-and-data.md)         | Zustand vs Jotai, query keys, caching, mutations, shared types          |
-| Forms                  | [`code/forms.md`](./code/forms.md)                           | React Hook Form + Zod, registry `<Field />` family, error contract      |
-| Testing                | [`testing.md`](./testing.md)                                 | What to test, Vitest, Playwright, Storybook, coverage, flaky policy     |
-| Performance            | [`performance.md`](./performance.md)                         | Budgets, images, fonts, dynamic imports, memoization, CI gates          |
-| Accessibility          | [`accessibility.md`](./accessibility.md)                     | WCAG 2.1 AA, semantic HTML, keyboard, focus, contrast, labels           |
-| Security               | [`security.md`](./security.md)                               | Input validation, tokens, authorization, env prefixes, dependencies     |
-| Tooling (editor)       | [`tooling/editor.md`](./tooling/editor.md)                   | Required extensions, `.vscode/settings.json`, `.editorconfig`           |
-| Tooling (lint/format)  | [`tooling/lint-format.md`](./tooling/lint-format.md)         | ESLint/Prettier config, pre-commit hooks, CI checks                     |
+| Area                   | File                                                               | Covers                                                                          |
+| ---------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
+| Architecture (Stack A) | [`architecture/nextjs.md`](./architecture/nextjs.md)               | Folder layout, server/client split, Server Actions, caching, boundaries         |
+| Architecture (Stack B) | [`architecture/vite-react.md`](./architecture/vite-react.md)       | Folder layout, TanStack Router, loaders, code splitting, env vars               |
+| TypeScript             | [`code/typescript.md`](./code/typescript.md)                       | tsconfig flags, type vs interface, `any`/`unknown`, assertions                  |
+| Components             | [`code/components.md`](./code/components.md)                       | Categories, props, conditional rendering, memoization, states                   |
+| Styling                | [`code/styling.md`](./code/styling.md)                             | Tailwind, registry-first, `cva`, theme tokens, dark mode                        |
+| Naming                 | [`code/naming.md`](./code/naming.md)                               | Files, components, hooks, booleans, handlers, types                             |
+| State and data         | [`code/state-and-data.md`](./code/state-and-data.md)               | Zustand vs Jotai, query keys, caching, mutations, shared types                  |
+| Forms (shared)         | [`code/forms.md`](./code/forms.md)                                 | Library selection, Zod schema rule, registry `<Field />` family, error contract |
+| Forms: React Hook Form | [`code/forms-react-hook-form.md`](./code/forms-react-hook-form.md) | RHF wiring: `<Controller />`, field spread, `useFieldArray`, server errors      |
+| Forms: TanStack Form   | [`code/forms-tanstack-form.md`](./code/forms-tanstack-form.md)     | TanStack Form wiring: `form.Field` render prop, `field.state`, array mode       |
+| Testing                | [`testing.md`](./testing.md)                                       | What to test, Vitest, Playwright, Storybook, coverage, flaky policy             |
+| Performance            | [`performance.md`](./performance.md)                               | Budgets, images, fonts, dynamic imports, memoization, CI gates                  |
+| Accessibility          | [`accessibility.md`](./accessibility.md)                           | WCAG 2.1 AA, semantic HTML, keyboard, focus, contrast, labels                   |
+| Security               | [`security.md`](./security.md)                                     | Input validation, tokens, authorization, env prefixes, dependencies             |
+| Tooling (editor)       | [`tooling/editor.md`](./tooling/editor.md)                         | Required extensions, `.vscode/settings.json`, `.editorconfig`                   |
+| Tooling (lint/format)  | [`tooling/lint-format.md`](./tooling/lint-format.md)               | ESLint/Prettier config, pre-commit hooks, CI checks                             |
 
 When a rule differs between stacks, the file states both explicitly under stack subheadings. When no stack is named, the rule applies to both.
 
