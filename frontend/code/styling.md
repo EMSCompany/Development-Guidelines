@@ -135,6 +135,31 @@ A component never reaches outside its own box. This is what makes a component sa
 - A component MUST NOT set its own outer margin. Spacing between siblings is owned by the parent.
 - Prefer `gap` on a flex or grid parent over margins for spacing between children. MUST NOT use `space-x`/`space-y` or per-child margins where `gap` works.
 - When margin is unavoidable, use the top side only (`mt`). MUST NOT use `mb`. One direction means spacing never doubles or collapses unpredictably between two components that each set their own.
+- Spacing MUST make grouping unambiguous: the gap between groups MUST be larger than the gap within a group. Equal spacing everywhere reads as one flat list and hides the structure.
+
+```tsx
+// ✅ Tighter within the field, looser between fields: groups read clearly
+<div className="flex flex-col gap-6">
+  <div className="flex flex-col gap-1">
+    <Label>Email</Label>
+    <Input />
+  </div>
+  <div className="flex flex-col gap-1">
+    <Label>Password</Label>
+    <Input />
+  </div>
+</div>
+```
+
+```tsx
+// ❌ One gap for everything: label, input, and next field all look equally related
+<div className="flex flex-col gap-3">
+  <Label>Email</Label>
+  <Input />
+  <Label>Password</Label>
+  <Input />
+</div>
+```
 
 ```tsx
 // ✅ Parent owns the rhythm; children are self-contained
@@ -200,6 +225,7 @@ These keep shared code predictable so any developer can read and extend another'
 - Square elements MUST use `size-*`, not an `h-*`/`w-*` pair.
 - A container MUST use one spacing mechanism. MUST NOT mix `gap` with sibling margins in the same parent.
 - `z-index` MUST come from the defined scale (`z-0`, `z-10`, ... `z-50`). MUST NOT use arbitrary `z-[...]`. If you need a layer the scale lacks, add it to the scale, do not inline it.
+- Font size MUST come from the type scale (`text-sm`, `text-base`, `text-lg`, ...). MUST NOT use an arbitrary `text-[17px]`. If a step is missing, add it to the scale, do not inline it.
 - A utility cluster repeated three or more times MUST be promoted to a registry component or a `cva` variant. MUST NOT copy-paste the same class string across files.
 - Breakpoints are the Tailwind default set. MUST NOT introduce ad-hoc custom breakpoints in a single component.
 
