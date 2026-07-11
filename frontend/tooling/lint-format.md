@@ -35,11 +35,11 @@ export default [
 
 This file does not restate rules other files own. Lint is where they are mechanically checked. The enforced set includes, with the owning file:
 
-- `enum` ban and `any` policy — [`../code/typescript.md`](../code/typescript.md)
-- `jsx-a11y` accessibility rules — [`../accessibility.md`](../accessibility.md)
-- No barrel files, no `import *` from large libraries, subpath imports — [`../performance.md`](../performance.md)
-- Tailwind class sorting — see Prettier below, config owned by [`../code/styling.md`](../code/styling.md)
-- React Hooks rules of hooks and exhaustive-deps — [`../code/components.md`](../code/components.md)
+- `enum` ban and `any` policy (see [`../code/typescript.md`](../code/typescript.md))
+- `jsx-a11y` accessibility rules (see [`../accessibility.md`](../accessibility.md))
+- No barrel files, no `import *` from large libraries, subpath imports (see [`../performance.md`](../performance.md))
+- Tailwind class sorting via Prettier below; config owned by [`../code/styling.md`](../code/styling.md)
+- React Hooks rules of hooks and exhaustive-deps (see [`../code/components.md`](../code/components.md))
 
 A rule in this list MUST NOT be weakened in a repo config. If a rule is wrong, change it in the shared config for everyone (see [`../conventions.md`](../conventions.md)), not locally.
 
@@ -50,7 +50,7 @@ A rule in this list MUST NOT be weakened in a repo config. If a rule is wrong, c
 - `tailwindFunctions` MUST list `cn` and `cva` so classes inside them sort too. This MUST match what [`../code/styling.md`](../code/styling.md) requires.
 
 ```js
-// ✅ prettier.config.js — committed, shared by both stacks
+// ✅ prettier.config.js, committed and shared by both stacks
 /** @type {import("prettier").Config} */
 export default {
   semi: true,
@@ -77,7 +77,7 @@ export default {
 - A commit MUST NOT be landed with `--no-verify` to skip a failing hook. Bypassing the hook to push broken code is a defect, not a workaround.
 
 ```jsonc
-// ✅ package.json — staged-only, fix then format
+// ✅ package.json: staged-only, fix then format
 {
   "lint-staged": {
     "*.{ts,tsx}": ["eslint --fix --max-warnings=0", "prettier --write"],

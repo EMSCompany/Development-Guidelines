@@ -1,0 +1,10 @@
+{
+  "name": "circleone-frontend",
+  "description": "Circleone frontend standards for AI coding agents. Makes Claude follow the team's enforceable rules for Next.js (Stack A) and Vite + React (Stack B): architecture, TypeScript, components, styling, forms, naming, accessibility, performance, security, and tooling.",
+  "author": {
+    "name": "Circleone Frontend Team"
+  },
+  "homepage": "https://github.com/EMSCompany/Development-Guidelines",
+  "repository": "https://github.com/EMSCompany/Development-Guidelines",
+  "keywords": ["standards", "frontend", "react", "nextjs", "vite", "typescript"]
+}

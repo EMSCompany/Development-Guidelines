@@ -11,7 +11,7 @@ Applies to both stacks. Read [`../conventions.md`](../conventions.md) first. The
 - The repository MUST commit a `.vscode/extensions.json` that recommends them, so a new clone prompts the install.
 
 ```jsonc
-// ✅ .vscode/extensions.json — committed, prompts on first open
+// ✅ .vscode/extensions.json: committed, prompts on first open
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
@@ -37,7 +37,7 @@ Applies to both stacks. Read [`../conventions.md`](../conventions.md) first. The
 - The workspace TypeScript SDK MUST be used so editor errors match the repo's `tsc`, not the editor's bundled version.
 
 ```jsonc
-// ✅ .vscode/settings.json — committed
+// ✅ .vscode/settings.json: committed
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -75,7 +75,7 @@ Applies to both stacks. Read [`../conventions.md`](../conventions.md) first. The
 - Settings here MUST agree with Prettier. The two MUST NOT specify conflicting indent or line-ending rules.
 
 ```ini
-# ✅ .editorconfig — committed at the repository root
+# ✅ .editorconfig, committed at the repository root
 root = true
 
 [*]
@@ -98,7 +98,7 @@ trim_trailing_whitespace = false
 - Developers MUST NOT rely on `core.autocrlf` for correctness. It is per-machine and unset on a fresh clone; `.gitattributes` is committed and binds everyone.
 
 ```gitattributes
-# ✅ .gitattributes — committed at the repository root
+# ✅ .gitattributes, committed at the repository root
 * text=auto eol=lf
 *.png binary
 *.jpg binary

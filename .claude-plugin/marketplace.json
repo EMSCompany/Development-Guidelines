@@ -1,0 +1,14 @@
+{
+  "name": "circleone",
+  "owner": { "name": "Circleone Frontend Team" },
+  "description": "Circleone internal Claude Code plugins",
+  "plugins": [
+    {
+      "name": "circleone-frontend",
+      "source": "./frontend/claude-plugin/circleone-frontend",
+      "description": "Circleone frontend standards: architecture, TypeScript, components, styling, forms, naming, a11y, performance, security",
+      "category": "standards",
+      "keywords": ["frontend", "react", "nextjs", "vite", "typescript"]
+    }
+  ]
+}
