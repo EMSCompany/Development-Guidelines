@@ -1,6 +1,6 @@
 # Architecture: Next.js (Stack A)
 
-Rules for the Next.js 16 App Router application. Stack B has its own file at [`vite-react.md`](./vite-react.md). Read [`../conventions.md`](../conventions.md) first.
+Rules for the Next.js 16 App Router application. Stack B has its own file at [`vite-react.md`](./vite-react.md), Stack C at [`expo-react-native.md`](./expo-react-native.md). Read [`../conventions.md`](../conventions.md) first.
 
 ## Required folder layout
 

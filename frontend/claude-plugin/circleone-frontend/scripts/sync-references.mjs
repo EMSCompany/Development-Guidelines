@@ -62,7 +62,8 @@ const include = [
 
 /** Strip fenced code blocks that contain an example marker. */
 function digest(markdown) {
-  const lines = markdown.split("\n");
+  // Normalize CRLF so the blank-line collapse below works on Windows checkouts.
+  const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const out = [];
   let fence = null; // buffered lines of the open fenced block
   for (const line of lines) {

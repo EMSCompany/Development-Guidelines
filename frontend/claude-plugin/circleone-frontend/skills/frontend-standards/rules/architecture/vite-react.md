@@ -2,7 +2,7 @@
 
 # Architecture: Vite + React (Stack B)
 
-Rules for the Vite + React + TanStack Router application. Stack A has its own file at [`nextjs.md`](./nextjs.md). Read [`../conventions.md`](../conventions.md) first.
+Rules for the Vite + React + TanStack Router application. Stack A has its own file at [`nextjs.md`](./nextjs.md), Stack C at [`expo-react-native.md`](./expo-react-native.md). Read [`../conventions.md`](../conventions.md) first.
 
 This stack is a client-side SPA. TanStack Start (SSR, server functions) is out of scope here; if a project needs it, that is a change to these standards, not a per-PR exception.
 
@@ -20,8 +20,6 @@ The view layer is organized by feature. The data layer is organized by domain. R
 - Route search params MUST be validated with `validateSearch` using a Zod schema. MUST NOT read raw `window.location.search`.
 - Navigation MUST use the typed `Link` / `useNavigate`. MUST NOT build route strings by hand.
 
-
-
 ## Loader vs component data fetching
 
 Loaders are the entry point for route-critical data. They hydrate the TanStack Query cache so the component reads from one source.
@@ -30,15 +28,11 @@ Loaders are the entry point for route-critical data. They hydrate the TanStack Q
 - Secondary, interaction-driven, or paginated data MAY be fetched in-component with `useQuery`.
 - MUST NOT fetch route-critical data only inside `useEffect`. That reintroduces waterfalls and loses preloading.
 
-
-
 ## Code splitting
 
 - The router bundler plugin MUST set `autoCodeSplitting: true`. MUST NOT scatter manual `lazyRouteComponent` calls when auto-splitting covers the case.
 - MUST NOT split the route `loader` into its own chunk. The loader is a preload asset and belongs in the main bundle.
 - Large, rarely-used, non-route chunks (heavy editors, charts) SHOULD be lazied with `React.lazy` + `<Suspense>` (size threshold in [`../performance.md`](../performance.md)).
-
-
 
 ## Env var conventions
 
@@ -46,14 +40,11 @@ Loaders are the entry point for route-critical data. They hydrate the TanStack Q
 - MUST NOT put secrets in any `VITE_` variable. Everything prefixed `VITE_` ships in the bundle (see [`../security.md`](../security.md)).
 - Env MUST be read through one validated module, parsed with Zod at startup. MUST NOT scatter raw `import.meta.env` reads.
 
-
-
 ## Vite config conventions
 
 - The `tanstackRouter` plugin MUST be registered before `@vitejs/plugin-react`. Order is required for codegen.
 - Path alias `@` MUST resolve to `src/`. The same alias MUST exist in `tsconfig` and `vite.config.ts`.
 - Build-affecting config (aliases, plugins, env handling) MUST live in `vite.config.ts`, not be duplicated per entry point.
-
 
 ## Forbidden patterns
 

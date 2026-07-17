@@ -2,7 +2,7 @@
 
 # Architecture: Next.js (Stack A)
 
-Rules for the Next.js 16 App Router application. Stack B has its own file at [`vite-react.md`](./vite-react.md). Read [`../conventions.md`](../conventions.md) first.
+Rules for the Next.js 16 App Router application. Stack B has its own file at [`vite-react.md`](./vite-react.md), Stack C at [`expo-react-native.md`](./expo-react-native.md). Read [`../conventions.md`](../conventions.md) first.
 
 ## Required folder layout
 
@@ -11,13 +11,10 @@ The view layer is organized by feature. The data layer is organized by domain. A
 - Route files (`page.tsx`, `layout.tsx`, `route.ts`) MUST stay thin. Logic lives in `features/` or `domains/`, not in route files.
 - A feature MUST NOT import another feature's internals. Cross-feature sharing goes through `shared/` or the relevant domain.
 
-
-
 ## Route groups
 
 - Use route groups `(group)` only to share or split a layout. MUST NOT use them for URL cosmetics.
 - A route group MUST NOT change the public URL.
-
 
 ## Server vs Client components
 
@@ -26,16 +23,12 @@ The view layer is organized by feature. The data layer is organized by domain. A
 - MUST NOT add `'use client'` to a file only because a child needs it.
 - MUST NOT put `'use client'` in `layout.tsx`.
 
-
-
 ## Server Actions
 
 - Use Server Actions for mutations (create, update, delete). MUST NOT use them for reads a Server Component or Route Handler can do.
 - MUST validate every input with Zod at the top of the action (see [`../security.md`](../security.md)).
 - MUST authorize inside the action. Never trust the client to gate it.
 - After a successful mutation, MUST revalidate affected data with the two-argument `revalidateTag(tag, 'max')` or `revalidatePath`.
-
-
 
 ## Caching defaults
 
@@ -45,8 +38,6 @@ This app runs `cacheComponents: true`. Nothing is cached unless explicitly marke
 - Cache data with `'use cache'` plus an explicit `cacheLife` profile. MUST NOT rely on implicit defaults.
 - MUST tag cached data with `cacheTag` so mutations can target it.
 - Wrap per-request or per-user work in `<Suspense>`. MUST NOT cache it.
-
-
 
 ## Required boundaries
 
@@ -69,7 +60,6 @@ This app runs `cacheComponents: true`. Nothing is cached unless explicitly marke
 - Dynamic pages MUST use `generateMetadata` driven by the fetched entity, not hardcoded strings.
 - The root layout MUST set `metadataBase`, a default title template, and Open Graph defaults.
 
-
 ## Forbidden patterns
 
 - MUST NOT fetch in a Client Component what a Server Component can fetch.
@@ -82,8 +72,6 @@ This app runs `cacheComponents: true`. Nothing is cached unless explicitly marke
 - **Logging.** Server logs MUST go through the shared logger. MUST NOT log PII, tokens, or full request/response payloads.
 - **Errors.** Expected failures return typed results. Unexpected failures throw to the nearest `error.tsx`. MUST NOT catch-and-ignore.
 - **Env.** Access env through one validated config module, parsed with Zod at startup. MUST NOT scatter raw `process.env` reads.
-
-
 
 ## Sample folder structure
 

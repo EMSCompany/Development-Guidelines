@@ -4,10 +4,11 @@ Enforceable standards for Circleone frontend development.
 
 ## Scope
 
-These standards govern frontend code across both production stacks:
+These standards govern frontend code across all three production stacks:
 
 - **Stack A**: Next.js 16 (App Router) + TypeScript
 - **Stack B**: React + Vite + TanStack Router + TypeScript
+- **Stack C**: React Native + Expo + TypeScript + TanStack Query (mobile)
 
 Shared tooling covered here: Tailwind on a custom shadcn/ui registry, Zustand/Jotai (client state), TanStack Query plus Next.js Server Actions and fetch caching (server state), Vitest + React Testing Library, and ESLint + Prettier.
 
@@ -27,6 +28,7 @@ Then read by area:
 | ---------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
 | Architecture (Stack A) | [`architecture/nextjs.md`](./architecture/nextjs.md)               | Folder layout, server/client split, Server Actions, caching, boundaries         |
 | Architecture (Stack B) | [`architecture/vite-react.md`](./architecture/vite-react.md)       | Folder layout, TanStack Router, loaders, code splitting, env vars               |
+| Architecture (Stack C) | [`architecture/expo-react-native.md`](./architecture/expo-react-native.md) | Folder layout, Expo Router, TanStack Query on native, env vars, EAS     |
 | TypeScript             | [`code/typescript.md`](./code/typescript.md)                       | tsconfig flags, type vs interface, `any`/`unknown`, assertions                  |
 | Components             | [`code/components.md`](./code/components.md)                       | Categories, props, conditional rendering, memoization, states                   |
 | Styling                | [`code/styling.md`](./code/styling.md)                             | Tailwind, registry-first, `cva`, theme tokens, dark mode                        |
