@@ -22,19 +22,20 @@ Every rule is a single statement. Where a wrong version looks similar to a right
 
 ## When stacks differ
 
-Two production stacks exist:
+Three production stacks exist:
 
 - **Stack A**: Next.js 16 (App Router) + TypeScript
 - **Stack B**: React + Vite + TanStack Router + TypeScript
+- **Stack C**: React Native + Expo + TypeScript + TanStack Query (mobile)
 
-Rules apply to both stacks unless a file states otherwise under an explicit stack subheading. When a file has `### Stack A` and `### Stack B` subheadings for a topic, apply only the one matching the repository you are in. Shared tooling (Tailwind, shadcn/ui registry, Zustand, Jotai, TanStack Query, Vitest, RTL, ESLint, Prettier) is governed identically across both stacks unless stated.
+Rules apply to every stack unless a file states otherwise under an explicit stack subheading. When a file has `### Stack A` / `### Stack B` / `### Stack C` subheadings for a topic, apply only the one matching the repository you are in. Web-only tooling (Tailwind, shadcn/ui registry) is governed identically across Stacks A and B unless stated and does not apply to Stack C. Cross-platform tooling (TypeScript, Zod, Zustand, Jotai, TanStack Query, ESLint, Prettier, testing) is governed identically across all three stacks unless stated. Rules that only make sense in a browser DOM (semantic HTML, CSS) do not bind Stack C; their intent (accessibility, consistent styling) still does.
 
 ## Precedence when rules conflict
 
 When two rules appear to conflict, resolve in this order. Higher wins.
 
 1. **Security and accessibility.** A rule in `security.md` or `accessibility.md` overrides any rule elsewhere that would weaken it. These are floors, not trade-offs.
-2. **Stack-specific over general.** A rule under a `### Stack A` or `### Stack B` subheading overrides a general rule on the same topic for that stack.
+2. **Stack-specific over general.** A rule under a `### Stack A`, `### Stack B`, or `### Stack C` subheading overrides a general rule on the same topic for that stack.
 3. **More specific file over README.** Topic files override anything implied by `README.md`.
 4. **Explicit keyword over silence.** A keyworded rule overrides a reader's assumption about unstated cases.
 
@@ -84,6 +85,7 @@ A change is done only when all of the following hold. A reviewer MUST NOT approv
 | ---------------- | ---------------------------------------------------------------------------------- |
 | **Stack A**      | The Next.js 16 App Router application.                                             |
 | **Stack B**      | The Vite + React + TanStack Router application.                                    |
+| **Stack C**      | The React Native + Expo mobile application.                                        |
 | **Registry**     | The custom component registry built on shadcn/ui. The source of UI primitives.     |
 | **Boundary**     | A point where untrusted data enters the app (network, form, URL, storage, file).   |
 | **Server state** | Data owned by the server and cached on the client (TanStack Query, fetch cache).   |

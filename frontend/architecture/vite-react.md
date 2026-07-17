@@ -1,6 +1,6 @@
 # Architecture: Vite + React (Stack B)
 
-Rules for the Vite + React + TanStack Router application. Stack A has its own file at [`nextjs.md`](./nextjs.md). Read [`../conventions.md`](../conventions.md) first.
+Rules for the Vite + React + TanStack Router application. Stack A has its own file at [`nextjs.md`](./nextjs.md), Stack C at [`expo-react-native.md`](./expo-react-native.md). Read [`../conventions.md`](../conventions.md) first.
 
 This stack is a client-side SPA. TanStack Start (SSR, server functions) is out of scope here; if a project needs it, that is a change to these standards, not a per-PR exception.
 

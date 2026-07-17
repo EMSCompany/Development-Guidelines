@@ -23,18 +23,14 @@ Everything below applies regardless of library.
 - Form value types MUST derive from the schema via `z.infer`. MUST NOT hand-write a parallel form interface.
 - The schema MUST be the single source for both shape and messages.
 
-
-
 ## Schema naming
 
 - A form schema MUST be named `xSchema` and its derived type `XValues`.
-
 
 ## Primitives
 
 - Forms MUST be built from the registry `<Field />` family (`Field`, `FieldLabel`, `FieldDescription`, `FieldError`, `FieldSet`, `FieldLegend`, `FieldGroup`, `FieldContent`). MUST NOT hand-roll label, description, or error markup.
 - MUST NOT use the legacy shadcn form pattern: `<Form />`, `<FormField />`, `<FormItem />`, `<FormControl />`, `<FormMessage />`.
-
 
 ## Error contract
 
@@ -44,30 +40,22 @@ A field in an invalid state MUST express it in all three places. Missing any one
 2. `aria-invalid` on the control (`<Input />`, `<SelectTrigger />`, `<Checkbox />`, etc.).
 3. `<FieldError />` rendered with the field's errors.
 
-
-
 ## Messages
 
 - Validation messages MUST live in the Zod schema. MUST NOT duplicate or rewrite a message in JSX.
-
-
 
 ## Default values
 
 - `defaultValues` MUST be provided for every field. A field MUST NOT switch between controlled and uncontrolled across its lifecycle.
 
-
-
 ## Grouping
 
 - Checkbox groups and radio groups MUST be wrapped in `<FieldSet>` with a `<FieldLegend>`. A single checkbox/switch does not need a fieldset.
-
 
 ## Shared client and server validation
 
 - The same Zod schema MUST validate on the client (form) and on the server (Server Action or Route Handler). MUST NOT duplicate the validation logic.
 - The schema lives in the domain layer and is imported by both sides (see [`state-and-data.md`](./state-and-data.md) and [`../security.md`](../security.md)).
-
 
 ## Reset
 

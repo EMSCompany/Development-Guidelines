@@ -1,6 +1,6 @@
 ---
 name: frontend-standards
-description: Circleone's enforceable frontend coding standards for Stack A (Next.js 16 App Router + TypeScript) and Stack B (Vite + React + TanStack Router + TypeScript). Use this skill whenever writing, editing, reviewing, refactoring, or generating ANY frontend code in a Circleone repository — components, hooks, forms, styling (Tailwind, shadcn/ui registry), client/server state (Zustand, Jotai, TanStack Query, Server Actions), routing, folder structure, TypeScript, naming, tests, accessibility, performance, security, or ESLint/Prettier config — even for small edits and even when the user doesn't mention standards. Also use it when answering questions about how Circleone frontend code should be written or reviewed.
+description: Circleone's enforceable frontend coding standards for Stack A (Next.js 16 App Router + TypeScript), Stack B (Vite + React + TanStack Router + TypeScript), and Stack C (React Native + Expo + TypeScript + TanStack Query). Use this skill whenever writing, editing, reviewing, refactoring, or generating ANY frontend code in a Circleone repository — components, hooks, forms, styling (Tailwind, shadcn/ui registry), client/server state (Zustand, Jotai, TanStack Query, Server Actions), routing, folder structure, TypeScript, naming, tests, accessibility, performance, security, or ESLint/Prettier config — even for small edits and even when the user doesn't mention standards. Also use it when answering questions about how Circleone frontend code should be written or reviewed.
 ---
 
 # Circleone Frontend Standards
@@ -19,7 +19,8 @@ Links inside the files pointing to `tooling/` are intentionally not bundled — 
 1. **Identify the stack** of the repository you are working in:
    - **Stack A** — `package.json` depends on `next` (Next.js 16, App Router).
    - **Stack B** — `package.json` depends on `vite` and `@tanstack/react-router`.
-   - Rules apply to both stacks unless a file has explicit `### Stack A` / `### Stack B` subheadings; then apply only the matching one.
+   - **Stack C** — `package.json` depends on `expo` and `react-native`.
+   - Rules apply to every stack unless a file has explicit `### Stack A` / `### Stack B` / `### Stack C` subheadings; then apply only the matching one. Web-only tooling rules (Tailwind, shadcn/ui registry, semantic HTML) do not bind Stack C; their intent (accessibility, consistent styling) still does.
 2. **Read `rules/conventions.md` first** (once per session). It defines the rule keywords, precedence order, exception process, and definition of done. Everything else depends on it.
 3. **Read the topic files relevant to the change** (see routing table below) *before* writing code, not after.
 4. **Apply the rules while writing.** Don't write code first and patch it to comply afterwards — architecture and form-wiring rules shape the code from the start.
@@ -52,6 +53,7 @@ Read every file whose area the change touches. Most changes touch several (a new
 | --- | --- |
 | Folder layout, routing, data fetching, Server Actions, caching (Stack A) | `rules/architecture/nextjs.md` |
 | Folder layout, TanStack Router, loaders, code splitting, env vars (Stack B) | `rules/architecture/vite-react.md` |
+| Folder layout, Expo Router, TanStack Query on native, env vars, EAS (Stack C) | `rules/architecture/expo-react-native.md` |
 | Any TypeScript (types, assertions, tsconfig) | `rules/code/typescript.md` |
 | Components, props, conditional rendering, loading/empty/error states | `rules/code/components.md` |
 | Styling, Tailwind classes, cva variants, theme tokens, dark mode | `rules/code/styling.md` |
