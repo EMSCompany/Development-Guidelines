@@ -30,7 +30,7 @@ Then read by area:
 | Architecture (Stack B) | [`architecture/vite-react.md`](./architecture/vite-react.md)       | Folder layout, TanStack Router, loaders, code splitting, env vars               |
 | Architecture (Stack C) | [`architecture/expo-react-native.md`](./architecture/expo-react-native.md) | Folder layout, Expo Router, TanStack Query on native, env vars, EAS     |
 | TypeScript             | [`code/typescript.md`](./code/typescript.md)                       | tsconfig flags, type vs interface, `any`/`unknown`, assertions                  |
-| Components             | [`code/components.md`](./code/components.md)                       | Categories, props, conditional rendering, memoization, states                   |
+| Components             | [`code/components.md`](./code/components.md)                       | Categories, compound vs unitary structure, props, memoization, states           |
 | Styling                | [`code/styling.md`](./code/styling.md)                             | Tailwind, registry-first, `cva`, theme tokens, dark mode                        |
 | Naming                 | [`code/naming.md`](./code/naming.md)                               | Files, components, hooks, booleans, handlers, types                             |
 | State and data         | [`code/state-and-data.md`](./code/state-and-data.md)               | Zustand vs Jotai, query keys, caching, mutations, shared types                  |

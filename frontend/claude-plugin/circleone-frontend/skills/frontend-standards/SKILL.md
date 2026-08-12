@@ -55,7 +55,7 @@ Read every file whose area the change touches. Most changes touch several (a new
 | Folder layout, TanStack Router, loaders, code splitting, env vars (Stack B) | `rules/architecture/vite-react.md` |
 | Folder layout, Expo Router, TanStack Query on native, env vars, EAS (Stack C) | `rules/architecture/expo-react-native.md` |
 | Any TypeScript (types, assertions, tsconfig) | `rules/code/typescript.md` |
-| Components, props, conditional rendering, loading/empty/error states | `rules/code/components.md` |
+| Components, compound vs unitary structure, props, conditional rendering, loading/empty/error states | `rules/code/components.md` |
 | Styling, Tailwind classes, cva variants, theme tokens, dark mode | `rules/code/styling.md` |
 | Names of files, components, hooks, booleans, handlers, types | `rules/code/naming.md` |
 | Any form — always start here | `rules/code/forms.md` |

@@ -2,7 +2,7 @@
 
 # Styling
 
-Applies to both stacks. Stack uses Tailwind v4 on the shadcn/ui registry. Read [`../conventions.md`](../conventions.md) first. Class-sort config lives in [`../tooling/lint-format.md`](../tooling/lint-format.md).
+Applies to Stacks A and B, which both use Tailwind v4 on the shadcn/ui registry. Read [`../conventions.md`](../conventions.md) first. Stack C is bound only where a `### Stack C` subheading appears; elsewhere the styling intent carries over but these utilities do not. Class-sort config lives in [`../tooling/lint-format.md`](../tooling/lint-format.md).
 
 ## Tailwind only
 
