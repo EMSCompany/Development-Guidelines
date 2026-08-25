@@ -18,6 +18,8 @@ Out of scope: backend services, infrastructure, CI pipeline internals, design-to
 
 Frontend developers at Circleone, new and existing, across all seniority levels. Read `conventions.md` before contributing code.
 
+Claude Code and Cursor load these standards via the `circleone-frontend` plugin. Install and update setup: [`AI-PLUGIN-SETUP.md`](./AI-PLUGIN-SETUP.md).
+
 ## How to navigate
 
 Start with [`conventions.md`](./conventions.md). It defines the MUST / SHOULD / MAY keywords, the precedence order when rules conflict, the exception process, and the definition of done. Every other file depends on it.
