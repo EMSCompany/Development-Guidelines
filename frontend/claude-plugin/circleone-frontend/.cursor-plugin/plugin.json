@@ -1,0 +1,20 @@
+{
+  "name": "circleone-frontend",
+  "displayName": "Circleone Frontend Standards",
+  "description": "Circleone frontend standards for AI coding agents. Enforceable rules for Stack A (Next.js 16 App Router), Stack B (Vite + React + TanStack Router), and Stack C (React Native + Expo): architecture, TypeScript, components, styling, forms, naming, accessibility, performance, security, and testing.",
+  "author": {
+    "name": "Circleone Frontend Team"
+  },
+  "homepage": "https://github.com/EMSCompany/Development-Guidelines",
+  "repository": "https://github.com/EMSCompany/Development-Guidelines",
+  "keywords": [
+    "standards",
+    "frontend",
+    "react",
+    "nextjs",
+    "vite",
+    "typescript",
+    "expo"
+  ],
+  "skills": "./skills/"
+}
